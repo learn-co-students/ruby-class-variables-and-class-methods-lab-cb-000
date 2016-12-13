@@ -55,6 +55,7 @@ class Song
   end
 
   #hash of artists and number of songs they have
+  # so looking at their code, we can actually forgo the outer loop and have better O1 space, instead of 2 loops
   def self.artist_count
     hash = {}
     self.artists.each do |art|
