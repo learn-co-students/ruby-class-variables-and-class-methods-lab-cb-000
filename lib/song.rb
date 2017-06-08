@@ -20,18 +20,28 @@ class Song
   end
 
   def self.artists
-    if @@artists[@artist] == nil
-      @@artists << @artist
+    return @@artists.uniq
+  end
+
+  def self.genres
+    return @@genres.uniq
+=begin --Slower Method--
+    genre_return = []
+    @@genres.each do |x|
+      genre_return << x unless genre_return.include?(x)
     end
-    return @@artists
+    return genre_return
+=end
   end
 
   def self.genre_count
-    genre_counter = {}
+    genre_return = {}
     @@genres.each do |x|
-      genre_counter[x] =  @@count
+      if genre_return[x] = x
+
+      end
     end
-    return genre_counter
+    return genre_return
   end
 
 end
