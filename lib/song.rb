@@ -19,4 +19,19 @@ class Song
     @@count
   end
 
+  def self.artists
+    if @@artists[@artist] == nil
+      @@artists << @artist
+    end
+    return @@artists
+  end
+
+  def self.genre_count
+    genre_counter = {}
+    @@genres.each do |x|
+      genre_counter[x] =  @@count
+    end
+    return genre_counter
+  end
+
 end
