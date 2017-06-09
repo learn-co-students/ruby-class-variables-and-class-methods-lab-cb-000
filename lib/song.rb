@@ -23,6 +23,18 @@ class Song
     return @@artists.uniq
   end
 
+  def self.artist_count
+    artist_counter = {}
+    @@artists.each do |x|
+      if artist_counter[x]
+        artist_counter[x] += 1
+      else
+        artist_counter[x] = 1
+      end
+    end
+    artist_counter
+  end
+
   def self.genres
     return @@genres.uniq
 =begin --Slower Method--
@@ -35,13 +47,15 @@ class Song
   end
 
   def self.genre_count
-    genre_return = {}
+    genre_counter = {}
     @@genres.each do |x|
-      if genre_return[x] = x
-
+      if genre_counter[x]
+        genre_counter[x] +=1
+      else
+        genre_counter[x] = 1
       end
     end
-    return genre_return
+    return genre_counter
   end
 
 end
