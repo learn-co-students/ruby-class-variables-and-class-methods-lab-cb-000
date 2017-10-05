@@ -49,10 +49,4 @@ class Song
     end
     artist_count_hash
   end
-
-
-
-#  @@artists = [] - when initialized add an artist
-#  @@genres = [] - when initialized add a genre
-#  @@g_count - when initialized add 1
 end
