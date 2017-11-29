@@ -38,6 +38,25 @@ class Song
   def self.artists
     @@artists.uniq
   end
+
+  # Write a class method, .genre_count
+  # that returns a hash in which the keys are the names of each genre, and the value is the number of songs that have that genre.
+  def self.genre_count
+    genre_count = {}
+
+    # 1. iterate over the @@genres array and add key/value pairs to genre_count hash
+    @@genres.each do |genre|
+      # 2. check to see if the hash already contains a key of a particular genre
+      if genre_count[genre]
+        # 3. If true, increment the value (count) of that genre by one
+        genre_count[genre] += 1
+      else
+        # 4. If false, create a new genre (key) with a count (value) of 1
+        genre_count[genre] = 1
+      end
+    end
+    return genre_count
+  end
 end
 
 
