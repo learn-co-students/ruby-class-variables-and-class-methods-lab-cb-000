@@ -5,6 +5,8 @@ class Song
   @@count = 0
   # keep track of the genres of songs
   @@genres = []
+  # keep track of the artists of songs
+  @@artists = []
 
   # an individual song is initialized with a name, artist and genre
   def initialize (name, artist, genre)
@@ -16,6 +18,8 @@ class Song
     @@count += 1
     # add the genre of the song when a new song is added
     @@genres << genre
+    # add the artist of the song when a new song is added
+    @@artists << artist
   end
 
   # Write a class method, .count, that returns the total number of songs created
@@ -27,6 +31,12 @@ class Song
   # This array should contain only unique genres, no duplicates
   def self.genres
     @@genres.uniq
+  end
+
+  # Write a class method, .artists, that returns an array of all of the artists of the existing songs.
+  # This array should only contain unique artists, no duplicates
+  def self.artists
+    @@artists.uniq
   end
 end
 
