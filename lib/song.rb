@@ -1,4 +1,3 @@
-require 'pry'
 class Song 
   attr_accessor :name, :artist, :genre
   @@count = 0 
@@ -45,7 +44,7 @@ class Song
     result
   end
   
-    def self.artist_count
+  def self.artist_count
     result = {}
     @@artists.each do |artist|
       result[artist] = 0 if result[artist].nil?
